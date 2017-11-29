@@ -15,7 +15,7 @@ import android.provider.MediaStore;
 public class Map {
 
     @PrimaryKey(autoGenerate = true)
-    private int id;
+    public int id;
 
     @ColumnInfo(name = "map_name")
     private String name;

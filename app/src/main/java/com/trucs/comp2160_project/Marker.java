@@ -32,7 +32,11 @@ public class Marker {
     @ColumnInfo(name = "type")
     private String type;
 
-    public Marker(Integer x, Integer y, String desc, String type) {
+    @ColumnInfo(name = "map_id")
+    public Integer map_id;
+
+    public Marker(Integer map_id, Integer x, Integer y, String desc, String type) {
+        this.map_id = map_id;
         this.x = x;
         this.y = y;
         this.desc = desc;
