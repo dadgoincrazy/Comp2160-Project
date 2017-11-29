@@ -18,7 +18,7 @@ import android.arch.persistence.room.PrimaryKey;
 public class Marker {
 
     @PrimaryKey(autoGenerate = true)
-    private int id;
+    public int id;
 
     @ColumnInfo(name = "pos_x")
     private Integer x;

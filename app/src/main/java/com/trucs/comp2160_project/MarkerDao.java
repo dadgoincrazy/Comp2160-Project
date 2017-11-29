@@ -17,7 +17,7 @@ public interface MarkerDao {
     @Query("SELECT * FROM marker")
     List<Marker> getAll();
 
-    @Query("SELECT * FROM marker WHERE  IN (:mapIds)")
+    @Query("SELECT * FROM marker WHERE map_id IN (:mapIds)")
     List<Map> loadAllByIds(int[] mapIds);
 
     @Query("SELECT * FROM map WHERE map_name LIKE :name LIMIT 1")

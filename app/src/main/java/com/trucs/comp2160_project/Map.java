@@ -21,18 +21,22 @@ public class Map {
     private String name;
 
     @ColumnInfo(name = "file_name")
-    private Uri filename;
+    private String filename;
 
-    public Map(String name, Uri filename) {
+    public Map(String name, String filename) {
         this.name = name;
         this.filename = filename;
     }
 
-    public Uri getFilename() {
+    public Uri getUri() {
+        return Uri.parse(filename);
+    }
+
+    public String getFilename() {
         return filename;
     }
 
-    public void setFilename(Uri filename) {
+    public void setFilename(String filename) {
         this.filename = filename;
     }
 
@@ -45,7 +49,7 @@ public class Map {
     }
 
     public Bitmap getPictureFromUri(Context context) throws Exception {
-        Bitmap bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), getFilename());
+        Bitmap bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), getUri());
         return bitmap;
     }
 

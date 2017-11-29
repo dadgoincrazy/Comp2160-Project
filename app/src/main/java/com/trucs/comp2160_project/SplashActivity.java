@@ -9,8 +9,6 @@ import android.os.Bundle;
 public class SplashActivity extends AppCompatActivity {
 
     final static int TIME = 2000;
-    AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-            AppDatabase.class, "database-name").build();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
