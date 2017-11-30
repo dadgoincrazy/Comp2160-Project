@@ -6,10 +6,12 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -56,6 +58,14 @@ public class MapListActivity extends AppCompatActivity{
         adapter = new MapAdapter(maps, getApplicationContext());
 
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Map map = maps.get(position);
+                Toast.makeText(getApplicationContext(), map.getFilename(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void addMap(View v) {
