@@ -18,7 +18,7 @@ import android.arch.persistence.room.PrimaryKey;
 public class Marker {
 
     @PrimaryKey(autoGenerate = true)
-    public int id;
+    public long id;
 
     @ColumnInfo(name = "pos_x")
     private Integer x;
@@ -33,9 +33,9 @@ public class Marker {
     private String type;
 
     @ColumnInfo(name = "map_id")
-    public Integer map_id;
+    public long map_id;
 
-    public Marker(Integer map_id, Integer x, Integer y, String desc, String type) {
+    public Marker(long map_id, Integer x, Integer y, String desc, String type) {
         this.map_id = map_id;
         this.x = x;
         this.y = y;

@@ -2,6 +2,10 @@
     <string name="app_name">Comp2160-Project</string>
 
     <string name="title_activity_splash">SplashActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <!--<string name="dummy_button">Dummy Button</string>-->
+    <!--<string name="dummy_content">DUMMY\nCONTENT</string>-->
+    <string name="add_map">Add Map</string>
+    <string name="back">Back</string>
+    <string name="map_name">Map Name</string>
+    <string name="choose_picture">Choose Picture</string>
 </resources>

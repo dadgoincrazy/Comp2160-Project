@@ -15,7 +15,7 @@ import android.provider.MediaStore;
 public class Map {
 
     @PrimaryKey(autoGenerate = true)
-    public int id;
+    public long id;
 
     @ColumnInfo(name = "map_name")
     private String name;
@@ -26,6 +26,10 @@ public class Map {
     public Map(String name, String filename) {
         this.name = name;
         this.filename = filename;
+    }
+
+    public long getID() {
+        return id;
     }
 
     public Uri getUri() {

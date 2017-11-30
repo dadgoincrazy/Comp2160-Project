@@ -17,18 +17,18 @@ public interface MarkerDao {
     @Query("SELECT * FROM marker")
     List<Marker> getAll();
 
-    @Query("SELECT * FROM marker WHERE map_id IN (:mapIds)")
-    List<Map> loadAllByIds(int[] mapIds);
+    @Query("SELECT * FROM marker WHERE id IN (:markerIds)")
+    List<Marker> loadAllByIds(long[] markerIds);
 
-    @Query("SELECT * FROM map WHERE map_name LIKE :name LIMIT 1")
-    Map findByName(String name);
+    @Query("SELECT * FROM marker WHERE map_id = :map_id")
+    List<Marker> getByMapId(long map_id);
 
     @Insert
-    void insert(Map map);
+    long insert(Marker marker);
 
     @Update
-    void update(Map map);
+    void update(Marker marker);
 
     @Delete
-    void delete(Map map);
+    void delete(Marker marker);
 }

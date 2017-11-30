@@ -23,8 +23,11 @@ public interface MapDao {
     @Query("SELECT * FROM map WHERE map_name LIKE :name LIMIT 1")
     Map findByName(String name);
 
+    @Query("SELECT * FROM map WHERE id = :map_id LIMIT 1")
+    Map get(Integer map_id);
+
     @Insert
-    void insert(Map map);
+    long insert(Map map);
 
     @Update
     void update(Map map);
