@@ -3,6 +3,7 @@
     package="com.trucs.comp2160_project">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".App"
@@ -27,7 +28,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddMapActivity" />
-        <activity android:name=".ViewMapActivity"></activity>
+        <activity android:name=".ViewMapActivity" />
     </application>
 
 </manifest>

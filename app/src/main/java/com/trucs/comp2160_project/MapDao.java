@@ -18,13 +18,13 @@ public interface MapDao {
     List<Map> getAll();
 
     @Query("SELECT * FROM map WHERE id IN (:mapIds)")
-    List<Map> loadAllByIds(int[] mapIds);
+    List<Map> loadAllByIds(long[] mapIds);
 
     @Query("SELECT * FROM map WHERE map_name LIKE :name LIMIT 1")
     Map findByName(String name);
 
     @Query("SELECT * FROM map WHERE id = :map_id LIMIT 1")
-    Map get(Integer map_id);
+    Map get(long map_id);
 
     @Insert
     long insert(Map map);

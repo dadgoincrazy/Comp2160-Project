@@ -30,25 +30,6 @@ public class MapListActivity extends AppCompatActivity{
 
         listView = (ListView)findViewById(R.id.list);
 
-//        maps = new ArrayList<>();
-
-//        Map map1 = new Map("test1", "test1filename");
-//        mapDao.insert(map1);
-//        maps.add(new Map("test2", "test2filename"));
-//        maps.add(new Map("test3", "test3filename"));
-//        maps.add(new Map("test4", "test4filename"));
-//        maps.add(new Map("test5", "test5filename"));
-//        maps.add(new Map("test6", "test6filename"));
-//        maps.add(new Map("test7", "test7filename"));
-//        maps.add(new Map("test8", "test8filename"));
-//        maps.add(new Map("test9", "test9filename"));
-//        maps.add(new Map("test10", "test10filename"));
-//        maps.add(new Map("test11", "test11filename"));
-//        maps.add(new Map("test12", "test12filename"));
-//        maps.add(new Map("test13", "test13filename"));
-//        maps.add(new Map("test14", "test14filename"));
-//        maps.add(new Map("test15", "test15filename"));
-
         maps = new ArrayList<>(mapDao.getAll());
         // Delete all maps
 //        for(Map map : maps) {
@@ -63,7 +44,10 @@ public class MapListActivity extends AppCompatActivity{
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Map map = maps.get(position);
-                Toast.makeText(getApplicationContext(), map.getFilename(), Toast.LENGTH_SHORT).show();
+
+                Intent myIntent = new Intent(MapListActivity.this, ViewMapActivity.class);
+                myIntent.putExtra("map_id", map.getID());
+                startActivity(myIntent);
             }
         });
     }
